@@ -14,17 +14,22 @@ class App extends Component {
   //Call API
   componentDidMount() {
     this.exchangeRate('USD')
-    console.log('componentDidMount')
   
   }
   render() {
     return (
       <>
-        <Country
+        {this.state.exchangeRateResponse.data ? 
+          <Country
           changeCompared={this.changeCompared}
           exchangeRate={this.exchangeRate}
-          
+          exchangeRateResponse={this.state.exchangeRateResponse}   
         />
+          :
+          null
+        }
+
+        
 
         <ExchangeRate
           comparedCurrency={this.state.comparedCurrency}

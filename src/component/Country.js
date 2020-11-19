@@ -25,7 +25,24 @@ class Country extends Component {
   }
 
   render() {
+
+    console.log("Country.js: ",this.props.exchangeRateResponse.data.conversion_rates);
     //puts list of countries in array and then maps them into dropdown options
+
+    // let exchangeResponse = this.props.exchangeRateResponse;
+    // let countryList = [];
+    // if (exchangeResponse.data){
+    //     for (key in  exchangeResponse.data.conversion_rates){
+    //         countryList.push(key);
+    //     }
+
+    //     const filteredFruitList = this.state.countryMap.filter((country) => {
+    //         return country.includes(...countryList);
+    //       });
+
+
+
+    // }
     let countries = [];
     for (var key in this.state.countryMap)
       countries.push(`${key} - ${this.state.countryMap[key]}`);
@@ -42,12 +59,18 @@ class Country extends Component {
     return (
       <>
         <label htmlFor="base">From</label>
-        <select value="USD" onChange={this.exchangeRate} id="base">
+        <select onChange={this.exchangeRate} id="base">
+            <option value="none" selected disabled hidden> 
+                USD - United States Dollar 
+            </option>
           {options}
         </select>
         <br />
         <label htmlFor="compared">To</label>
-        <select value="EUR" onChange={this.changeCompared} id="compared">
+        <select onChange={this.changeCompared} id="compared">
+            <option value="none" selected disabled hidden> 
+                EUR - Euro 
+            </option>
           {options}
         </select>
       </>
