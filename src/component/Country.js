@@ -41,11 +41,11 @@ class Country extends Component {
         return ( 
             <>
             <label htmlFor="base">From</label>
-            <select id="base">
+            <select onChange={this.exchangeRate} id="base">
                 {options}
             </select><br/>
             <label htmlFor="compared">To</label>
-            <select onChange={this.exchangeRate} id="compared">
+            <select onChange={this.changeCompared} id="compared">
                 {options}
             </select>
             </>
@@ -54,6 +54,10 @@ class Country extends Component {
     exchangeRate =(e)=>{
         console.log(e.target.value)
         this.props.exchangeRate(e.target.value)
+    }
+
+    changeCompared =(e)=>{
+        this.props.changeCompared(e.target.value)
     }
 
 }

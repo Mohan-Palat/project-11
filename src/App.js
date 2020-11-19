@@ -4,31 +4,48 @@ import ExchangeRate from './component/ExchangeRate'
 import {getExchangeRate} from './api.js';
 class App extends Component {
 
+  constructor(props){
+    super(props)
+
+    this.state = {
+      exchangeRateResponse: ({}),
+      comparedCurrency: ''
+    }
+  }
+
   render() { 
     return ( 
       <>
       
-      <Country exchangeRate={this.exchangeRate}/>
+      <Country changeCompared={this.changeCompared} exchangeRate={this.exchangeRate}/>
+
+      <ExchangeRate comparedCurrency={this.state.comparedCurrency} exchangeRateResponse={this.state.exchangeRateResponse} />
       
       {/* <ExchangeRate /> */}
       </>
      );
   }
   exchangeRate=(base)=>{
-    //console.log('the article id to Delete by ',id)
     getExchangeRate(base)
         .then((response)=>{
             console.log(`The base country currency ${base} selected`)
             console.log(response)
-            // const newArticlesList=this.props.articles.filter((articles)=>{
-            //         return articles._id!==id;
+
+            this.setState({
+              exchangeRateResponse: response
+            })
+
         })
-            // this.props.setArticles(newArticlesList);
         .catch((error)=>{
         console.log('API error',error)
         })
     
-}
+  }
+  changeCompared=(compared)=>{
+    this.setState({
+      comparedCurrency: compared
+    })
+  }
 }
  
 
