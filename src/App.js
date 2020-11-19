@@ -8,16 +8,22 @@ class App extends Component {
 
     this.state = {
       exchangeRateResponse: {},
-      comparedCurrency: "USD",
+      comparedCurrency: '',
     };
   }
-
+  //Call API
+  componentDidMount() {
+    this.exchangeRate('USD')
+    console.log('componentDidMount')
+  
+  }
   render() {
     return (
       <>
         <Country
           changeCompared={this.changeCompared}
           exchangeRate={this.exchangeRate}
+          
         />
 
         <ExchangeRate
@@ -29,6 +35,7 @@ class App extends Component {
       </>
     );
   }
+  //UI
   exchangeRate = (base) => {
     getExchangeRate(base)
       .then((response) => {

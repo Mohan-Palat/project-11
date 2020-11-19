@@ -42,12 +42,12 @@ class Country extends Component {
     return (
       <>
         <label htmlFor="base">From</label>
-        <select onChange={this.exchangeRate} id="base">
+        <select value="USD" onChange={this.exchangeRate} id="base">
           {options}
         </select>
         <br />
         <label htmlFor="compared">To</label>
-        <select onChange={this.changeCompared} id="compared">
+        <select value="EUR" onChange={this.changeCompared} id="compared">
           {options}
         </select>
       </>
