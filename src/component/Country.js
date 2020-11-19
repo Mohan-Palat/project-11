@@ -40,17 +40,22 @@ class Country extends Component {
 
         return ( 
             <>
-            <label for="base">From</label>
+            <label htmlFor="base">From</label>
             <select id="base">
                 {options}
             </select><br/>
-            <label for="compared">To</label>
-            <select id="compared">
+            <label htmlFor="compared">To</label>
+            <select onChange={this.exchangeRate} id="compared">
                 {options}
             </select>
             </>
          );
     }
+    exchangeRate =(e)=>{
+        console.log(e.target.value)
+        this.props.exchangeRates(e.target.selected)
+    }
+
 }
  
 export default Country;
