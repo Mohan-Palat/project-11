@@ -8,7 +8,7 @@ class App extends Component {
 
     this.state = {
       exchangeRateResponse: {},
-      comparedCurrency: '',
+      comparedCurrency: 'EUR',
     };
   }
   //Call API
@@ -23,7 +23,8 @@ class App extends Component {
           <Country
           changeCompared={this.changeCompared}
           exchangeRate={this.exchangeRate}
-          exchangeRateResponse={this.state.exchangeRateResponse}   
+          exchangeRateResponse={this.state.exchangeRateResponse} 
+          comparedCurrency={this.state.comparedCurrency}  
         />
           :
           null

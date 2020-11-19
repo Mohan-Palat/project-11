@@ -59,18 +59,14 @@ class Country extends Component {
     return (
       <>
         <label htmlFor="base">From</label>
-        <select onChange={this.exchangeRate} id="base">
-            <option value="none" selected disabled hidden> 
-                USD - United States Dollar 
-            </option>
+        <select value = {this.props.exchangeRateResponse.data.base_code} onChange={this.exchangeRate} id="base">
+            
           {options}
         </select>
         <br />
         <label htmlFor="compared">To</label>
-        <select onChange={this.changeCompared} id="compared">
-            <option value="none" selected disabled hidden> 
-                EUR - Euro 
-            </option>
+        <select value={this.props.comparedCurrency} onChange={this.changeCompared} id="compared">
+            
           {options}
         </select>
       </>
