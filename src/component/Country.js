@@ -53,7 +53,7 @@ class Country extends Component {
     }
     exchangeRate =(e)=>{
         console.log(e.target.value)
-        this.props.exchangeRates(e.target.selected)
+        this.props.exchangeRate(e.target.value)
     }
 
 }
