@@ -40,14 +40,14 @@ class Country extends Component {
 
         return ( 
             <>
-
-            <select id="cars" name="cars">
-                
-            {options}
+            <label for="base">From</label>
+            <select id="base">
+                {options}
+            </select><br/>
+            <label for="compared">To</label>
+            <select id="compared">
+                {options}
             </select>
-
-            <p>dropdown menu for based country</p>
-            <p>dropdown menu for Compared country</p>
             </>
          );
     }
