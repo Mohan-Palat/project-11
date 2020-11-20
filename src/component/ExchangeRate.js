@@ -7,7 +7,7 @@ class ExchangeRate extends Component {
   }
 
   render() {
-    console.log("Exchange rate props: ", this.props.exchangeRateResponse);
+   // console.log("Exchange rate props: ", this.props.exchangeRateResponse);
     //console.log("Compared country", this.props.comparedCurrency)
     let baseCurrency = "No Currency Selected";
     let comparedAmount = 0.0;

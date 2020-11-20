@@ -14,10 +14,21 @@ class Country extends Component {
     getSymbols()
       .then((response) => {
         console.log("Country codes", response.data.symbols);
+        const filteredCountryMap = response.data.symbols;
 
-        this.setState({
-          countryMap: response.data.symbols,
-        });
+        if (this.props.exchangeRateResponse.data.conversion_rates) {
+          for (let key in response.data.symbols) {
+            if (
+              !(key in this.props.exchangeRateResponse.data.conversion_rates)
+            ) {
+              //console.log("key to delete is", key)
+              delete filteredCountryMap[key];
+            }
+          }
+          this.setState({
+            countryMap: filteredCountryMap,
+          });
+        }
       })
       .catch((error) => {
         console.log("API ERROR:", error);
@@ -25,24 +36,7 @@ class Country extends Component {
   }
 
   render() {
-
-    console.log("Country.js: ",this.props.exchangeRateResponse.data.conversion_rates);
-    //puts list of countries in array and then maps them into dropdown options
-
-    // let exchangeResponse = this.props.exchangeRateResponse;
-    // let countryList = [];
-    // if (exchangeResponse.data){
-    //     for (key in  exchangeResponse.data.conversion_rates){
-    //         countryList.push(key);
-    //     }
-
-    //     const filteredFruitList = this.state.countryMap.filter((country) => {
-    //         return country.includes(...countryList);
-    //       });
-
-
-
-    // }
+   
     let countries = [];
     for (var key in this.state.countryMap)
       countries.push(`${key} - ${this.state.countryMap[key]}`);
@@ -59,14 +53,20 @@ class Country extends Component {
     return (
       <>
         <label htmlFor="base">From</label>
-        <select value = {this.props.exchangeRateResponse.data.base_code} onChange={this.exchangeRate} id="base">
-            
+        <select
+          value={this.props.exchangeRateResponse.data.base_code}
+          onChange={this.exchangeRate}
+          id="base"
+        >
           {options}
         </select>
         <br />
         <label htmlFor="compared">To</label>
-        <select value={this.props.comparedCurrency} onChange={this.changeCompared} id="compared">
-            
+        <select
+          value={this.props.comparedCurrency}
+          onChange={this.changeCompared}
+          id="compared"
+        >
           {options}
         </select>
       </>
