@@ -31,6 +31,7 @@ class App extends Component {
           exchangeRate={this.exchangeRate}
           exchangeRateResponse={this.state.exchangeRateResponse} 
           comparedCurrency={this.state.comparedCurrency}  
+          toggleCurrency={this.toggleCurrency}
 
         />
           :
@@ -46,6 +47,13 @@ class App extends Component {
         {/* <ExchangeRate /> */}
       </>
     );
+  }
+  toggleCurrency=(e)=>{
+    let base=this.state.exchangeRateResponse.data.base_code
+    let compared=this.state.comparedCurrency
+    this.changeCompared(base)
+    this.exchangeRate(compared)
+
   }
   //UI
   exchangeRate = (base) => {

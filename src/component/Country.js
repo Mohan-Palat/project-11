@@ -68,6 +68,9 @@ class Country extends Component {
                 {options}
             </select>
         </div>
+        <div>
+          <button onClick={this.toggleCurrency}> &lt;-- &gt; </button>
+        </div>
         <br />
         <div>
             <CountryFlag flag={this.state.compareFlag}/>
@@ -83,7 +86,9 @@ class Country extends Component {
       </>
     );
   }
-
+  toggleCurrency=(e)=>{
+    this.props.toggleCurrency()
+  }
   handleSelect = (e) => {
     this.getCountryFlag(e);
 
