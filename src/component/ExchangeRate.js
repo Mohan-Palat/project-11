@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-import { getSymbols } from "../api.js";
+
 
 class ExchangeRate extends Component {
-  constructor(props) {
-    super(props);
-  }
+ 
 
   render() {
    // console.log("Exchange rate props: ", this.props.exchangeRateResponse);
@@ -20,10 +18,24 @@ class ExchangeRate extends Component {
 
     return (
       <div>
-        <p> From: {baseCurrency + " 1"}</p>
-        <p> To: {this.props.comparedCurrency + "  " + comparedAmount} </p>
+        
+        <p> From: 
+            <input type="text"
+                value={this.props.increments}
+                onChange={this.onAmountChange}
+            /> 
+            
+            {baseCurrency}
+            
+        </p>
+
+        <p> To: {this.props.increments * comparedAmount + " " + this.props.comparedCurrency} </p>
       </div>
     );
+  }
+  onAmountChange = (e) => {
+      
+      this.props.onAmountChange(e.target.value);
   }
 }
 

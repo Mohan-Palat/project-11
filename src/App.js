@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Country from "./component/Country";
 import ExchangeRate from "./component/ExchangeRate";
 import { getExchangeRate } from "./api.js";
-import CountryFlag from './component/CountryFlag'
+
 
 
 class App extends Component {
@@ -12,6 +12,7 @@ class App extends Component {
     this.state = {
       exchangeRateResponse: {},
       comparedCurrency: 'EUR',
+      increments: 1
      
     };
   }
@@ -42,6 +43,8 @@ class App extends Component {
         <ExchangeRate
           comparedCurrency={this.state.comparedCurrency}
           exchangeRateResponse={this.state.exchangeRateResponse}
+          onAmountChange={this.handleAmountChange}
+          increments={this.state.increments}
         />
 
         {/* <ExchangeRate /> */}
@@ -75,6 +78,17 @@ class App extends Component {
       comparedCurrency: compared,
     });
   };
+
+  handleAmountChange = (value) => {
+    console.log("Amount change val: ",value);
+    let amount = value;
+
+    console.log("Our increments: ", this.state.increments);
+
+    this.setState({
+      increments: amount
+    })
+}
 }
 
 export default App;
