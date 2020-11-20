@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import Country from "./component/Country";
 import ExchangeRate from "./component/ExchangeRate";
 import { getExchangeRate } from "./api.js";
+import CountryFlag from './component/CountryFlag'
+
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -9,6 +12,7 @@ class App extends Component {
     this.state = {
       exchangeRateResponse: {},
       comparedCurrency: 'EUR',
+     
     };
   }
   //Call API
@@ -19,19 +23,21 @@ class App extends Component {
   render() {
     return (
       <>
+       
+
         {this.state.exchangeRateResponse.data ? 
           <Country
           changeCompared={this.changeCompared}
           exchangeRate={this.exchangeRate}
           exchangeRateResponse={this.state.exchangeRateResponse} 
           comparedCurrency={this.state.comparedCurrency}  
+
         />
           :
           null
         }
 
-        
-
+       
         <ExchangeRate
           comparedCurrency={this.state.comparedCurrency}
           exchangeRateResponse={this.state.exchangeRateResponse}

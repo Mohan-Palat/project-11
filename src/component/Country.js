@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { getSymbols } from "../api.js";
+import CountryFlag from './CountryFlag'
 
 class Country extends Component {
   constructor(props) {
@@ -7,6 +8,9 @@ class Country extends Component {
 
     this.state = {
       countryMap: {},
+      baseFlag: "https://www.countryflags.io/US/shiny/64.png",
+      compareFlag : "https://www.countryflags.io/EU/shiny/64.png"
+
     };
   }
 
@@ -51,8 +55,11 @@ class Country extends Component {
     });
 
     return (
-      <>
+      <div>
+       <CountryFlag baseFlag={this.state.baseFlag}
+                    compareFlag={this.state.compareFlag}/>
         <label htmlFor="base">From</label>
+     
         <select
           value={this.props.exchangeRateResponse.data.base_code}
           onChange={this.exchangeRate}
@@ -69,7 +76,7 @@ class Country extends Component {
         >
           {options}
         </select>
-      </>
+      </div>
     );
   }
   exchangeRate = (e) => {
