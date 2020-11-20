@@ -9,7 +9,7 @@ class Country extends Component {
     this.state = {
       countryMap: {},
       baseFlag: "https://www.countryflags.io/US/shiny/64.png",
-      compareFlag : "https://www.countryflags.io/EU/shiny/64.png"
+      compareFlag: "https://www.countryflags.io/EU/shiny/64.png"
 
     };
   }
@@ -55,30 +55,43 @@ class Country extends Component {
     });
 
     return (
-      <div>
-       <CountryFlag baseFlag={this.state.baseFlag}
-                    compareFlag={this.state.compareFlag}/>
-        <label htmlFor="base">From</label>
-     
-        <select
-          value={this.props.exchangeRateResponse.data.base_code}
-          onChange={this.exchangeRate}
-          id="base"
-        >
-          {options}
-        </select>
+      <>
+        <div>
+            <CountryFlag flag={this.state.baseFlag}/>
+            <label htmlFor="base">From</label>
+        
+            <select
+                value={this.props.exchangeRateResponse.data.base_code}
+                onChange={this.handleSelect}
+                id="base"
+                >
+                {options}
+            </select>
+        </div>
         <br />
-        <label htmlFor="compared">To</label>
-        <select
-          value={this.props.comparedCurrency}
-          onChange={this.changeCompared}
-          id="compared"
-        >
-          {options}
-        </select>
-      </div>
+        <div>
+            <CountryFlag flag={this.state.compareFlag}/>
+            <label htmlFor="compared">To</label>
+            <select
+                value={this.props.comparedCurrency}
+                onChange={this.handleSelect}
+                id="compared"
+                >
+                {options}
+            </select>
+        </div>
+      </>
     );
   }
+
+  handleSelect = (e) => {
+    this.getCountryFlag(e);
+
+    if (e.target.id === 'base')
+        this.exchangeRate(e);
+    else this.changeCompared(e);
+  }
+
   exchangeRate = (e) => {
     console.log(e.target.value);
     this.props.exchangeRate(e.target.value);
@@ -86,6 +99,26 @@ class Country extends Component {
 
   changeCompared = (e) => {
     this.props.changeCompared(e.target.value);
+  };
+
+  getCountryFlag = (e) => {
+    let currency = e.target.value;
+    let country = currency.slice(0,2);
+
+    console.log(country);
+
+    let flag = `https://www.countryflags.io/${country}/shiny/64.png`;
+
+    if (e.target.id==='base'){
+        this.setState({
+            baseFlag: flag,
+        });
+    }
+    else {
+        this.setState({
+            compareFlag: flag,
+        });
+    }
   };
 }
 

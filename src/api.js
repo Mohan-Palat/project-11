@@ -10,9 +10,4 @@ const getExchangeRate= (base)=> {
     return axios.get(`https://v6.exchangerate-api.com/v6/${process.env.REACT_APP_API_KEY_EXCHANGE}/latest/${base}`)
 }
 
-const getFlags= (country)=> {
-    
-    return axios.get(`https://www.countryflags.io/${country}/shiny/64.png`)
-}
-
-export { getSymbols, getExchangeRate, getFlags};
+export { getSymbols, getExchangeRate};

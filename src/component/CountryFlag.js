@@ -8,8 +8,7 @@ class CountryFlag extends Component {
   render() {
     return (
       <div>
-        <img src={this.props.baseFlag}></img>
-        <img src={this.props.compareFlag}></img>
+        <img src={this.props.flag}></img>
       </div>
     );
   }
