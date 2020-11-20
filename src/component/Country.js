@@ -88,6 +88,13 @@ class Country extends Component {
   }
   toggleCurrency=(e)=>{
     this.props.toggleCurrency()
+    let baseFlag = this.state.baseFlag;
+    let compareFlag = this.state.compareFlag;
+
+    this.setState({
+        baseFlag: compareFlag,
+        compareFlag: baseFlag
+    })
   }
   handleSelect = (e) => {
     this.getCountryFlag(e);
