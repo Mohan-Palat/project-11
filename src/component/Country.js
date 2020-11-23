@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { getSymbols } from "../api.js";
 import CountryFlag from './CountryFlag'
+import {Row, Col} from 'react-bootstrap/';
 
 class Country extends Component {
   constructor(props) {
@@ -55,8 +56,8 @@ class Country extends Component {
     });
 
     return (
-      <>
-        <div>
+      <Row>
+        <Col>
             <CountryFlag flag={this.state.baseFlag}/>
             <label htmlFor="base">From</label>
         
@@ -67,23 +68,26 @@ class Country extends Component {
                 >
                 {options}
             </select>
-        </div>
-        <div>
-          <button onClick={this.toggleCurrency}> &lt;-- &gt; </button>
-        </div>
-        <br />
-        <div>
-            <CountryFlag flag={this.state.compareFlag}/>
-            <label htmlFor="compared">To</label>
-            <select
-                value={this.props.comparedCurrency}
-                onChange={this.handleSelect}
-                id="compared"
-                >
-                {options}
-            </select>
-        </div>
-      </>
+        </Col>
+        <Col className="align-self-center">
+          <div className="text-center">
+            <button onClick={this.toggleCurrency}> &lt;-- &gt; </button>
+          </div>
+        </Col>
+        <Col>
+          <div>
+              <CountryFlag flag={this.state.compareFlag}/>
+              <label htmlFor="compared">To</label>
+              <select
+                  value={this.props.comparedCurrency}
+                  onChange={this.handleSelect}
+                  id="compared"
+                  >
+                  {options}
+              </select>
+          </div>
+        </Col>
+      </Row>
     );
   }
   toggleCurrency=(e)=>{
