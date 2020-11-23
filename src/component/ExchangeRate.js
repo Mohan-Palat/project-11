@@ -19,7 +19,7 @@ function ExchangeRate(props){
       <div>
         
         <p> From: 
-            <input type="text"
+            <input type="number"
                 value={props.increments}
                 onChange={onAmountChange}
             /> 
