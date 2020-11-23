@@ -1,17 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 
-class CountryFlag extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-  render() {
+function CountryFlag(props){
     return (
       <div>
-        <img src={this.props.flag}></img>
+        <img src={props.flag} alt=""></img>
       </div>
     );
-  }
+  
 }
 
 export default CountryFlag;
