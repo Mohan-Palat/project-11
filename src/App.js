@@ -28,7 +28,7 @@ class App extends Component {
       // https://react-bootstrap.netlify.app/layout/grid/#auto-layout-col-sizing
       <div className="justify-content-center my-5 col-md-8 row mx-auto card card-body">
        
-        <h1 className="align-self-center">Reactor's Conversion App</h1>
+        <h3 className="align-self-center">Reactor's Exchange Conversion</h3>
         {this.state.exchangeRateResponse.data ? 
           <Country
           changeCompared={this.changeCompared}

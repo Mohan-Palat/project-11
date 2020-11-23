@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { getSymbols } from "../api.js";
 import CountryFlag from './CountryFlag'
+import Button from 'react-bootstrap/Button';
 
 class Country extends Component {
   constructor(props) {
@@ -70,9 +71,9 @@ class Country extends Component {
             </select>
         </div>
         <div className="col-md-2 align-self-center">
-          <h1 className="swap align-self-center" onClick={this.toggleCurrency}>  &#x27F5;&#x27F6;</h1>
+          <h1 className="swap align-self-center" onClick={this.toggleCurrency}> &#x1F504;</h1>
           
-          <button className="swap align-self-center"> &lt;-- &gt; </button>
+          {/* <button variant="primary" className="swap align-self-center"> &lt;-- &gt; </button> */}
         </div> 
         <br />
         <div className="col-md-3 align-self-center">
