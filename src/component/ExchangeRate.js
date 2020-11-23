@@ -10,25 +10,27 @@ function ExchangeRate(props){
     const onAmountChange = (e) => { props.onAmountChange(e.target.value); }
     if (props.exchangeRateResponse.data) {
       baseCurrency = props.exchangeRateResponse.data.base_code;
-      comparedAmount = props.exchangeRateResponse.data.conversion_rates[
+      comparedAmount = (props.exchangeRateResponse.data.conversion_rates)[
         props.comparedCurrency
       ];
+      
     }
 
     return (
       <div className="d-flex justify-content-center" >
         
-        <p> From: 
-            <input type="text"
+        <p> 
+            <input type="number"
                 value={props.increments}
                 onChange={onAmountChange}
+                className="form-control form-comtrol-md col-md-10"
             /> 
             
-            { baseCurrency }
-            
+            {/* { baseCurrency }
+             */}
         </p>
 
-        <p> To: {props.increments * comparedAmount + " " + props.comparedCurrency} </p>
+        <p className="align-self-center">  { `${baseCurrency} =` } {(props.increments * comparedAmount).toFixed(2) + " " + props.comparedCurrency} </p>
       </div>
     );
   

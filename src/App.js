@@ -40,7 +40,7 @@ class App extends Component {
           null
         }
 
-       
+       <br></br>
         <ExchangeRate
           comparedCurrency={this.state.comparedCurrency}
           exchangeRateResponse={this.state.exchangeRateResponse}

@@ -110,7 +110,7 @@ class Country extends Component {
 
   exchangeRate = (e) => {
     console.log(e.target.value);
-    this.props.exchangeRate(e.target.value);
+    (this.props.exchangeRate(e.target.value)).toFixed(4);
   };
 
   changeCompared = (e) => {
