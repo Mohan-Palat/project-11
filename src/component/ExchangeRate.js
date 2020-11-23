@@ -1,18 +1,17 @@
-import React, { Component } from "react";
+import React from "react";
 
 
-class ExchangeRate extends Component {
+function ExchangeRate(props){
  
-
-  render() {
-   // console.log("Exchange rate props: ", this.props.exchangeRateResponse);
-    //console.log("Compared country", this.props.comparedCurrency)
+   // console.log("Exchange rate props: ", props.exchangeRateResponse);
+    //console.log("Compared country", props.comparedCurrency)
     let baseCurrency = "No Currency Selected";
     let comparedAmount = 0.0;
-    if (this.props.exchangeRateResponse.data) {
-      baseCurrency = this.props.exchangeRateResponse.data.base_code;
-      comparedAmount = this.props.exchangeRateResponse.data.conversion_rates[
-        this.props.comparedCurrency
+    const onAmountChange = (e) => { props.onAmountChange(e.target.value); }
+    if (props.exchangeRateResponse.data) {
+      baseCurrency = props.exchangeRateResponse.data.base_code;
+      comparedAmount = props.exchangeRateResponse.data.conversion_rates[
+        props.comparedCurrency
       ];
     }
 
@@ -21,22 +20,19 @@ class ExchangeRate extends Component {
         
         <p> From: 
             <input type="text"
-                value={this.props.increments}
-                onChange={this.onAmountChange}
+                value={props.increments}
+                onChange={onAmountChange}
             /> 
             
             {baseCurrency}
             
         </p>
 
-        <p> To: {this.props.increments * comparedAmount + " " + this.props.comparedCurrency} </p>
+        <p> To: {props.increments * comparedAmount + " " + props.comparedCurrency} </p>
       </div>
     );
-  }
-  onAmountChange = (e) => {
-      
-      this.props.onAmountChange(e.target.value);
-  }
+  
+  
 }
 
 export default ExchangeRate;
