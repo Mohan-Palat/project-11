@@ -13,23 +13,24 @@ class ExchangeRate extends Component {
       baseCurrency = this.props.exchangeRateResponse.data.base_code;
       comparedAmount = this.props.exchangeRateResponse.data.conversion_rates[
         this.props.comparedCurrency
-      ];
+      ].toFixed(2);
     }
 
     return (
-      <div>
+      <div className="d-flex justify-content-center" >
         
-        <p> From: 
-            <input type="text"
+        <p className="align-self-center">  <br></br>
+            <input type="number"
                 value={this.props.increments}
                 onChange={this.onAmountChange}
+                className="form-control form-control-md col-md-10"
             /> 
             
-            {baseCurrency}
+            { baseCurrency }
             
         </p>
 
-        <p> To: {this.props.increments * comparedAmount + " " + this.props.comparedCurrency} </p>
+        <p className="align-self-center"> {this.props.increments * comparedAmount + " " + this.props.comparedCurrency} </p>
       </div>
     );
   }

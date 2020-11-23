@@ -55,8 +55,8 @@ class Country extends Component {
     });
 
     return (
-      <>
-        <div>
+      <div className="d-flex flex-row justify-content-center">
+        <div className="col-md-3 align-self-center">
             <CountryFlag flag={this.state.baseFlag}/>
             <label htmlFor="base">From</label>
         
@@ -64,26 +64,30 @@ class Country extends Component {
                 value={this.props.exchangeRateResponse.data.base_code}
                 onChange={this.handleSelect}
                 id="base"
+                className="form-control form-control-md col-md-10"
                 >
                 {options}
             </select>
         </div>
-        <div>
-          <button onClick={this.toggleCurrency}> &lt;-- &gt; </button>
-        </div>
+        <div className="col-md-2 align-self-center">
+          <h1 className="swap align-self-center" onClick={this.toggleCurrency}>  &#x27F5;&#x27F6;</h1>
+          
+          {/* <button> &lt;-- &gt; </button> */}
+        </div> 
         <br />
-        <div>
+        <div className="col-md-3 align-self-center">
             <CountryFlag flag={this.state.compareFlag}/>
             <label htmlFor="compared">To</label>
             <select
                 value={this.props.comparedCurrency}
                 onChange={this.handleSelect}
                 id="compared"
+                className="form-control form-control-md col-md-10"
                 >
                 {options}
             </select>
         </div>
-      </>
+      </div>
     );
   }
   toggleCurrency=(e)=>{

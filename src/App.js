@@ -23,9 +23,10 @@ class App extends Component {
   }
   render() {
     return (
-      <>
+      // https://react-bootstrap.netlify.app/layout/grid/#auto-layout-col-sizing
+      <div className="justify-content-center my-5 col-md-8 row mx-auto card card-body">
        
-
+        <h1 className="align-self-center">Reactor's Conversion App</h1>
         {this.state.exchangeRateResponse.data ? 
           <Country
           changeCompared={this.changeCompared}
@@ -48,7 +49,7 @@ class App extends Component {
         />
 
         {/* <ExchangeRate /> */}
-      </>
+      </div>
     );
   }
   toggleCurrency=(e)=>{
