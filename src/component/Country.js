@@ -72,7 +72,7 @@ class Country extends Component {
         <div className="col-md-2 align-self-center">
           <h1 className="swap align-self-center" onClick={this.toggleCurrency}>  &#x27F5;&#x27F6;</h1>
           
-          {/* <button> &lt;-- &gt; </button> */}
+          <button className="swap align-self-center"> &lt;-- &gt; </button>
         </div> 
         <br />
         <div className="col-md-3 align-self-center">
@@ -110,7 +110,7 @@ class Country extends Component {
 
   exchangeRate = (e) => {
     console.log(e.target.value);
-    (this.props.exchangeRate(e.target.value)).toFixed(4);
+    this.props.exchangeRate(e.target.value);
   };
 
   changeCompared = (e) => {
