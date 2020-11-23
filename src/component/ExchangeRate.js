@@ -19,7 +19,7 @@ function ExchangeRate(props){
       <div className="d-flex justify-content-center" >
         
         <p> From: 
-            <input type="text"
+            <input type="number"
                 value={props.increments}
                 onChange={onAmountChange}
             /> 

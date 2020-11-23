@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+#  **The Reactors Exchange**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Reactors Exchange is web site where users can see the exchange rate for currency in over 50 countries. 
 
-## Available Scripts
+### &#x1F535; Project Team
+Jessie Chen - Design - Development - Layout
+Lawrence DeMaio - Design - Development - Layout
+Cory Trast - Design - Development - Lauou
 
-In the project directory, you can run:
+### &#x1F535; APP URL
+<a href="http://reactors-exchange.herokuapp.com/" target="_blank">The Reactors Exchange</a>
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### &#x1F535; Approach 
+The approach to design... 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### &#x1F535; Unsolved Problems
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### &#x1F535; User Stories
+* As a user I want to select a base country to begin the display of the exchange rate.
+* As a user I want to select an exchange country to complete the selection process and display of the exchange rate.
+* As a user when I complete selecting a Base Country and Exchange Country I want to view the exchange rate for the counties that I selected.
+* As a user when I select a Base Country any previous exchange rate results will be dynamically updated on page.
+* As a user when I want to understand the different components used for the project.
+* Stretch - As a user when I select a Base Country and Exchange Country I want to see the flags for the countries that I selected.
+* Stretch - As a user I would like to change the base currency amount, value other than 1,  so I can see the total exchange amount.
+* Stretch - As a user I would like to switch the currently selected base and exchange country values so I can see the exchange amount.
+* Stretch - CSS Styling
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### &#x1F535; **Technologies Used:**
+HTML, CSS, JavaScript, React, Axios, Herouku
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* HTML - HyperTextMarkUpLanguage - this is the structure of the site
+* CSS, Bootstrap - this is the styling of the site
+* JavaScript - the language used for coding
+* React - the JavaScript library for building user interfaces
+* Axios - promised based HTTP client for the browser
+* Heroku - platform as a service (PaaS) used to build and deploy applications
+* https://coolors.co/
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## GitHub Project Repo
+<a href="https://github.com/ctrast/project-3" target="_blank">GitHub Project Repo</a>
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### &#x1F535; Stretch Goals:
+#### Recommended Features
+* Show Country Flags of selected Countries
+* Update the From current amount to calculate current of more then 1 to 1
+*  Toggle to and from currencies - change the base and converted exchange counties with click of button rather than re-select from drop down lists
+* CSS Styling 
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
