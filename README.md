@@ -75,7 +75,7 @@ DevOps
 
 ### &#x1F535; **Components**
 <p float="left">
-  <img src="./components.png" alt="component" width="175px" height="175px">
+  <img src="/public/components.png" alt="component" width="175px" height="175px">
 </p>
 
 ### &#x1F535; Stretch Goals:
