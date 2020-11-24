@@ -2,24 +2,38 @@
 
 The Reactors Exchange is web site where users can see the exchange rate for currency in over 50 countries. 
 
-### &#x1F535; Project Team
-Jessie Chen - Design - Development - Layout
-Lawrence DeMaio - Design - Development - Layout
-Cory Trast - Design - Development - Lauou
+### Installation
+
+No installation
 
 ### &#x1F535; APP URL
 <a href="http://reactors-exchange.herokuapp.com/" target="_blank">The Reactors Exchange</a>
 
+### &#x1F535; Project Team
+Design - Development - Layout
+
+<ul>
+<li>Jessie Chen</li>
+<li>Lawrence DeMaio</li>
+<li>Cory Trast</li>
+</ul>
+
 
 ### &#x1F535; Approach 
-The approach to design... 
+<ul>
+<li>We went with simple but focus design that would allow us demonstrate our understanding of REACT and utilize APIs in the app. </li>
 
+<li>We also took the approach of pair programming in development for better colloboration </li>
 
+<li>Styling was designed under individual branch so we could put our creativity to the view using CSS, Bootstrap or 
+Semantic UI React</li>
+</ul>
 
-
-### &#x1F535; Unsolved Problems
-
-
+### &#x1F535; Future Enhancement
+<ul>
+<li>Include Google Map</li>
+<li>Improve codes using React Hooks</li>
+</ul>
 
 
 ### &#x1F535; User Stories
@@ -34,20 +48,34 @@ The approach to design...
 * Stretch - CSS Styling
 
 
-### &#x1F535; **Technologies Used:**
-HTML, CSS, JavaScript, React, Axios, Herouku
+### &#x1F535; **Technologies Used**
 
-* HTML - HyperTextMarkUpLanguage - this is the structure of the site
-* CSS, Bootstrap - this is the styling of the site
-* JavaScript - the language used for coding
-* React - the JavaScript library for building user interfaces
-* Axios - promised based HTTP client for the browser
-* Heroku - platform as a service (PaaS) used to build and deploy applications
-* https://coolors.co/
+
+Frontend
+<ul>
+<li>HTML - HyperTextMarkUpLanguage </li>
+<li>CSS, CSS Frameworks: Bootstrap and Semantic UI React </li>
+<li>JavaScript </li>
+<li>React - the JavaScript library for building user interfaces</li>
+<li>Axios - Promised based HTTP client for the browser</li>
+</ul>
+
+Backend
+<ul>
+<li>Version Control-Github</li>
+<li>Exhange Rate and Countries APIs</li>
+<li>Web Security-CORS</li>
+</ul>
+
+DevOps
+<ul>
+<li>Heroku - Platform as a service (PaaS) used to build and deploy applications</li>
+</ul>
+
+
 
 ## GitHub Project Repo
 <a href="https://github.com/ctrast/project-3" target="_blank">GitHub Project Repo</a>
-
 
 
 ### &#x1F535; Stretch Goals:
