@@ -1,6 +1,6 @@
 #  **The Reactors Exchange**
 
-The Reactors Exchange is web site where users can see the exchange rate for currency in over 50 countries. 
+The Reactors Exchange is web site where users can see the exchange rate for 50 currencies  used in over 70+ countries. 
 
 ### Installation
 
