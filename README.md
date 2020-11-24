@@ -73,6 +73,10 @@ DevOps
 <li>Heroku - Platform as a service (PaaS) used to build and deploy applications</li>
 </ul>
 
+### &#x1F535; **Components**
+<p float="left">
+  <img src="./public/components.png" alt="Home" width="175px" height="175px">
+</p>
 
 ### &#x1F535; Stretch Goals:
 #### Recommended Features
