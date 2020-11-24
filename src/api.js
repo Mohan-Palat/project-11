@@ -1,10 +1,12 @@
 import axios from "axios";
 
+
 const getSymbols = () => {
   return axios.get(
     `https://cors-anywhere.herokuapp.com/http://data.fixer.io/api/symbols?access_key=${process.env.REACT_APP_API_KEY_SYMBOLS}`
   );
 };
+
 
 const getExchangeRate = (base) => {
   return axios.get(
