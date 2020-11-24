@@ -74,9 +74,9 @@ DevOps
 </ul>
 
 ### &#x1F535; **Components**
-<p float="left">
-  <img src="/public/components.png" alt="component" width="175px" height="175px">
-</p>
+![Components](https://github.com/ctrast/project-3/blob/master/public/Components.png)
+ 
+
 
 ### &#x1F535; Stretch Goals:
 #### Recommended Features
