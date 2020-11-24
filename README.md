@@ -57,14 +57,18 @@ Frontend
 <li>CSS, CSS Frameworks: Bootstrap and Semantic UI React </li>
 <li>JavaScript </li>
 <li>React - the JavaScript library for building user interfaces</li>
-<li>Axios - Promised based HTTP client for the browser</li>
 </ul>
+Middleware
+<ul>
+<li>Axios - Promised based HTTP client for the browser</li>
+<li>Exhange Rate and Countries APIs</li>
+<li>Web Security-CORS Proxy</li>
+<li>Environment file Credential(.env) </li>
 
+</ul>
 Backend
 <ul>
-<li>Version Control-Github</li>
-<li>Exhange Rate and Countries APIs</li>
-<li>Web Security-CORS</li>
+<li>None</li>
 </ul>
 
 DevOps
