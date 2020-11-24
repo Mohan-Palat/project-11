@@ -16,7 +16,7 @@ function ExchangeRate(props){
     }
 
     return (
-      <div className="card-panel teal lighten-2">
+      <div class="country-selector">
         
         <p> From: 
             <input type="text"
@@ -27,6 +27,7 @@ function ExchangeRate(props){
             {baseCurrency}
             
         </p>
+        <div class="divider"></div>
 
         <p> To: {(props.increments * comparedAmount).toFixed(3) + " " + props.comparedCurrency} </p>
       </div>

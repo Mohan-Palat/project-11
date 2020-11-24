@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import Country from "./component/Country";
 import ExchangeRate from "./component/ExchangeRate";
 import { getExchangeRate } from "./api.js";
-import {Container, Row, Col} from 'react-bootstrap/';
-import 'bootstrap/dist/css/bootstrap.min.css'
+import './App.css'
+
+
 
 class App extends Component {
   constructor(props) {
@@ -23,37 +24,31 @@ class App extends Component {
   }
   render() {
     return (
-      <Container>
-        <Row>
-          <Col md="auto">
-            {this.state.exchangeRateResponse.data ? 
-              <Country
-              changeCompared={this.changeCompared}
-              exchangeRate={this.exchangeRate}
-              exchangeRateResponse={this.state.exchangeRateResponse} 
-              comparedCurrency={this.state.comparedCurrency}  
-              toggleCurrency={this.toggleCurrency}
+      <div id="app">
+
+        {this.state.exchangeRateResponse.data ? 
+          <Country
+          changeCompared={this.changeCompared}
+          exchangeRate={this.exchangeRate}
+          exchangeRateResponse={this.state.exchangeRateResponse} 
+          comparedCurrency={this.state.comparedCurrency}  
+          toggleCurrency={this.toggleCurrency}
 
             />
               :
               null
             }
-          </Col>
-        </Row>
 
-        <Row className="justify-content-md-center">
-          <Col md="auto" >
+
+
             <ExchangeRate
               comparedCurrency={this.state.comparedCurrency}
               exchangeRateResponse={this.state.exchangeRateResponse}
               onAmountChange={this.handleAmountChange}
               increments={this.state.increments}
             />
-          </Col>
 
-          {/* <ExchangeRate /> */}
-        </Row>
-      </Container>
+      </div>
     );
   }
   toggleCurrency=(e)=>{

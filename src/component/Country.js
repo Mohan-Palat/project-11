@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { getSymbols } from "../api.js";
-import CountryFlag from './CountryFlag'
-import {Row, Col} from 'react-bootstrap/';
+import CountryFlag from './CountryFlag';
+
+import switchIMG from '../img/switch.png'
 
 class Country extends Component {
   constructor(props) {
@@ -56,27 +57,30 @@ class Country extends Component {
     });
 
     return (
-      <Row>
-        <Col>
+      <div id="country-comp">
+        <div class="country-selector">
             <CountryFlag flag={this.state.baseFlag}/>
-            <label htmlFor="base">From</label>
-        
-            <select
-                value={this.props.exchangeRateResponse.data.base_code}
-                onChange={this.handleSelect}
-                id="base"
-                >
-                {options}
-            </select>
-        </Col>
-        <Col className="align-self-center">
-          <div className="text-center">
-            <button onClick={this.toggleCurrency}> &lt;-- &gt; </button>
-          </div>
-        </Col>
-        <Col>
-          <div>
-              <CountryFlag flag={this.state.compareFlag}/>
+            <div class="divider">.</div>
+            <div class="dropdown">
+              <label htmlFor="base">From</label>
+              <select
+                  value={this.props.exchangeRateResponse.data.base_code}
+                  onChange={this.handleSelect}
+                  id="base"
+                  >
+                  {options}
+              </select>
+            </div>
+        </div>
+        <div id="switch" onClick={this.toggleCurrency}>
+          <img src={switchIMG} width="40" /> 
+        </div>
+
+        <br />
+        <div class="country-selector">
+            <CountryFlag flag={this.state.compareFlag}/>
+            <div class="divider">.</div>
+            <div class="dropdown">
               <label htmlFor="compared">To</label>
               <select
                   value={this.props.comparedCurrency}
@@ -85,9 +89,9 @@ class Country extends Component {
                   >
                   {options}
               </select>
-          </div>
-        </Col>
-      </Row>
+            </div>
+        </div>
+      </div>
     );
   }
   toggleCurrency=(e)=>{
