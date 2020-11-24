@@ -20,7 +20,7 @@ class App extends Component {
   render() {
     return (
       <>
-        <h1 class="ui center aligned header">The Reactors Exchange</h1>
+        <h1 style={{ margin: "20px" }} class="ui center aligned header">The Reactors Exchange</h1>
         <a href='https://react.semantic-ui.com/' style={{fontSize: '10px'}}>Powered by: Semantic React UI</a>
 
         {this.state.exchangeRateResponse.data ? (

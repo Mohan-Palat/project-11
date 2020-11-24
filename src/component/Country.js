@@ -3,7 +3,6 @@ import { getSymbols } from "../api.js";
 import CountryFlag from "./CountryFlag";
 import { Button, Icon, Label } from "semantic-ui-react";
 
-
 class Country extends Component {
   constructor(props) {
     super(props);
@@ -55,12 +54,12 @@ class Country extends Component {
     });
 
     return (
-      <div  class="ui segment" class="ui center aligned header" >
+      <div class="ui segment" class="ui center aligned header">
         <div class="ui two column very relaxed grid">
           <div class="column">
             <CountryFlag flag={this.state.baseFlag} />
             {/* <label htmlFor="base">From:</label> */}
-          
+
             <select
               class="ui dropdown"
               value={this.props.exchangeRateResponse.data.base_code}
@@ -68,13 +67,14 @@ class Country extends Component {
               id="base"
             >
               {options}
-            </select><br/>
+            </select>
+            <br />
             <Label pointing>Please select a base currency</Label>
           </div>
 
           <div class="column">
             <CountryFlag flag={this.state.compareFlag} />
-            <label htmlFor="compared">To:</label>
+
             <select
               class="ui dropdown"
               value={this.props.comparedCurrency}
@@ -82,11 +82,12 @@ class Country extends Component {
               id="compared"
             >
               {options}
-            </select><br/>
+            </select>
+            <br />
             <Label pointing>Please select an exchange currency</Label>
           </div>
         </div>
-        <div >
+        <div>
           {/* <button onClick={this.toggleCurrency}> &lt;-- &gt; </button> */}
           <Button animated>
             <Button.Content visible onClick={this.toggleCurrency}>

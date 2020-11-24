@@ -23,13 +23,13 @@ function ExchangeRate(props) {
   }
 
   return (
-    <div class="ui center aligned header">
+    <div class="ui center aligned header"  style={{ margin: "20px" }}>
       <div class="ui divider" ></div>
 
-      <label>From:</label>
+      <label style={{ margin: "20px" }}>From:</label>
 
       {baseCurrency}
-      <Flag name={twoCharCountryBase} />
+      <Flag name={twoCharCountryBase}  style={{ margin: "20px" }}/>
       <input
         type="number"
         style={{ borderRadius: "10px" }}
@@ -40,9 +40,9 @@ function ExchangeRate(props) {
           
       </div>
 
-      <label>To:</label>
+      <label style={{ margin: "20px" }}>To:</label>
       {props.comparedCurrency}
-      <Flag name={twoCharCountryCom} />
+      <Flag name={twoCharCountryCom}  style={{ margin: "20px" }}/>
       {}
       <input
         style={{ border: "0px" }}
