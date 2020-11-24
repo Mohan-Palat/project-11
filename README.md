@@ -9,6 +9,10 @@ No installation
 ### &#x1F535; APP URL
 <a href="http://reactors-exchange.herokuapp.com/" target="_blank">The Reactors Exchange</a>
 
+
+### GitHub Project Repo
+<a href="https://github.com/ctrast/project-3" target="_blank">GitHub Project Repo</a>
+
 ### &#x1F535; Project Team
 Design - Development - Layout
 
@@ -75,11 +79,6 @@ DevOps
 <ul>
 <li>Heroku - Platform as a service (PaaS) used to build and deploy applications</li>
 </ul>
-
-
-
-## GitHub Project Repo
-<a href="https://github.com/ctrast/project-3" target="_blank">GitHub Project Repo</a>
 
 
 ### &#x1F535; Stretch Goals:
