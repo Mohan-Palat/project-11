@@ -33,13 +33,6 @@ Design - Development - Layout
 Semantic UI React</li>
 </ul>
 
-### &#x1F535; Future Enhancement
-<ul>
-<li>Include Google Map</li>
-<li>Improve codes using React Hooks</li>
-</ul>
-
-
 ### &#x1F535; User Stories
 * As a user I want to select a base country to begin the display of the exchange rate.
 * As a user I want to select an exchange country to complete the selection process and display of the exchange rate.
@@ -88,4 +81,9 @@ DevOps
 *  Toggle to and from currencies - change the base and converted exchange counties with click of button rather than re-select from drop down lists
 * CSS Styling 
 
+### &#x1F535; Future Enhancement
+<ul>
+<li>Include Google Map</li>
+<li>Improve codes using React Hooks</li>
+</ul>
 
