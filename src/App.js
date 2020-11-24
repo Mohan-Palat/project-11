@@ -3,44 +3,36 @@ import Country from "./component/Country";
 import ExchangeRate from "./component/ExchangeRate";
 import { getExchangeRate } from "./api.js";
 
-
-
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       exchangeRateResponse: {},
-      comparedCurrency: 'EUR',
-      increments: 1
-     
+      comparedCurrency: "EUR",
+      increments: 1,
     };
   }
   //Call API
   componentDidMount() {
-    this.exchangeRate('USD')
-  
+    this.exchangeRate("USD");
   }
   render() {
     return (
-      // https://react-bootstrap.netlify.app/layout/grid/#auto-layout-col-sizing
-      <div className="justify-content-center my-5 col-md-8 row mx-auto card card-body">
-       
-        <h1 className="align-self-center">Reactor's Conversion App</h1>
-        {this.state.exchangeRateResponse.data ? 
+      <>
+        <h1 style={{ margin: "20px" }} class="ui center aligned header">The Reactors Exchange</h1>
+        <a href='https://react.semantic-ui.com/' style={{fontSize: '10px'}}>Powered by: Semantic React UI</a>
+
+        {this.state.exchangeRateResponse.data ? (
           <Country
-          changeCompared={this.changeCompared}
-          exchangeRate={this.exchangeRate}
-          exchangeRateResponse={this.state.exchangeRateResponse} 
-          comparedCurrency={this.state.comparedCurrency}  
-          toggleCurrency={this.toggleCurrency}
+            changeCompared={this.changeCompared}
+            exchangeRate={this.exchangeRate}
+            exchangeRateResponse={this.state.exchangeRateResponse}
+            comparedCurrency={this.state.comparedCurrency}
+            toggleCurrency={this.toggleCurrency}
+          />
+        ) : null}
 
-        />
-          :
-          null
-        }
-
-       
         <ExchangeRate
           comparedCurrency={this.state.comparedCurrency}
           exchangeRateResponse={this.state.exchangeRateResponse}
@@ -49,16 +41,16 @@ class App extends Component {
         />
 
         {/* <ExchangeRate /> */}
-      </div>
+        
+      </>
     );
   }
-  toggleCurrency=(e)=>{
-    let base=this.state.exchangeRateResponse.data.base_code
-    let compared=this.state.comparedCurrency
-    this.changeCompared(base)
-    this.exchangeRate(compared)
-
-  }
+  toggleCurrency = (e) => {
+    let base = this.state.exchangeRateResponse.data.base_code;
+    let compared = this.state.comparedCurrency;
+    this.changeCompared(base);
+    this.exchangeRate(compared);
+  };
   //UI
   exchangeRate = (base) => {
     getExchangeRate(base)
@@ -81,15 +73,15 @@ class App extends Component {
   };
 
   handleAmountChange = (value) => {
-    console.log("Amount change val: ",value);
+    console.log("Amount change val: ", value);
     let amount = value;
 
     console.log("Our increments: ", this.state.increments);
 
     this.setState({
-      increments: amount
-    })
-}
+      increments: amount,
+    });
+  };
 }
 
 export default App;
